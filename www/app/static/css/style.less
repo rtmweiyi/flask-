@@ -1,0 +1,157 @@
+@baseColor: #11C1F3;
+.clearfix{
+  &:after{
+    content: '';
+    clear: both;
+  }
+}
+.params-select {
+  .img-item {
+    img {
+      max-width: 100%;
+    }
+  }
+  .button-bar{
+    margin-top: 1em;
+    font-size: 0.8em;
+  }
+}
+//图像面板
+.img-scroll{
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+}
+
+
+.lab1_5-page{
+  //实验1测试题页面
+  //
+  .img-topic-list img{
+    height: 3rem;
+  }
+  .item, .item h1, .item h2, .item h3, .item h4, .item h5, .item h6, .item p, .item-content, .item-content h1, .item-content h2, .item-content h3, .item-content h4, .item-content h5, .item-content h6, .item-content p {
+    overflow: visible;
+    white-space: normal;
+  }
+}
+
+.lab2_1-page{
+  .gs img{
+    height: 2rem;
+  }
+}
+
+.lab3_1-page{
+  .drag-drop-wrap{
+    h1{
+      font-size: 1rem;
+    }
+  }
+
+  .scroll-box{
+    text-align: center;
+    .wrap-box{
+      display: inline-block;
+    }
+    .devices-box{
+      margin: 1rem;
+      min-width: 18rem;
+      text-align: center;
+      .device{
+        border: 1px dashed #333;
+        float: left;
+        height: auto;
+        min-height: 2rem;
+        padding: 0.5rem;
+        width: auto;
+        min-width: 2rem;
+        text-align: center;
+        img{
+          height: 1rem;
+        }
+        .name{
+          font-size: 0.6rem;
+        }
+      }
+      .arrow{
+        float: left;
+        .arrow-line{
+          float: left;
+          border-top: 1px solid #333;
+          margin-top: 1rem;
+          width: 2rem;
+        }
+
+        .arrow-right {
+          float: left;
+          margin-top: 0.5rem;
+          border-top:0.5rem solid transparent;
+          border-bottom: 0.5rem solid transparent;
+          border-left: 0.5rem solid #333;
+        }
+      }
+    }
+  }
+  .drag-box{
+    .devices-box{
+      .device{
+        cursor: pointer;
+        margin-right: 0.5em;
+        margin-bottom: 0.5em;
+        text-align: center;
+        width: 4rem;
+        img{
+          height: 2rem;
+        }
+
+        &.clicked{
+          border-color: red;
+          animation: dragShaing 0.5s infinite;
+          -webkit-animation: dragShaing 0.5s infinite;
+        }
+      }
+    }
+  }
+  .drop-box-shaing{
+    .device{
+      animation: dropShaing 0.5s infinite;
+      -webkit-animation: dropShaing 0.5s infinite;
+    }
+  }
+  @keyframes dropShaing{
+    50%{
+      border-color: #fff;
+    }
+  }
+  @-webkit-keyframes dropShaing{
+    50%{
+      border-color: #fff;
+    }
+  }
+  @keyframes dragShaing{
+    50%{
+      border-color: #fff;
+    }
+  }
+  @-webkit-keyframes dragShaing{
+    50%{
+      border-color: #fff;
+    }
+  }
+
+}
+
+.lab4_1-page{
+  h2{
+    font-size: 1.3rem;
+  }
+  h3{
+    font-size: 1.1rem;
+  }
+  p{
+    img{
+      max-width: 100%;
+    }
+  }
+}

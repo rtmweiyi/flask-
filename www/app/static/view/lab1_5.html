@@ -1,0 +1,107 @@
+<ion-view class="lab1_5-page" cache-view="false">
+    <ion-nav-title>自我检测</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <a href="#index" class="button button-icon ion-ios-home"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a href="#lab1_3" class="button button-icon ion-android-arrow-back"></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="card list">
+            <div class="item item-divider">根据你输入的机械波参数回答下列问题</div>
+            <div class="item">
+                <p style="font-size: 1rem;">
+                    令:<br/>
+                    &phi;=0 <br/>
+                    &omega;<sub>1</sub> = &omega;<sub>2</sub> = &omega; = {{yxb.omega || 0}},<br/>
+                    &lambda;<sub>1</sub> = &lambda;<sub>2</sub> = &lambda; = {{yxb.lambda || 0}}
+                </p>
+            </div>
+        </div>
+        <div class="card list">
+            <div class="item item-divider">1.下面不是形成驻波的必要条件的是：</div>
+            <div class="item">
+                <div class="list">
+                    <label class="item item-radio">
+                        <input type="radio" name="topic1" ng-model="topic1" />
+                        <div class="item-content" value="1">a，两列波相向传播</div>
+                    </label>
+                    <label class="item item-radio">
+                        <input type="radio" name="topic1" value="2" ng-model="topic1" />
+                        <div class="item-content">b，两列波的初始相位相等</div>
+                    </label>
+                    <label class="item item-radio">
+                        <input type="radio" name="topic1" value="3" ng-model="topic1" />
+                        <div class="item-content">c，两列波的初始相位相等</div>
+                    </label>
+                    <label class="item item-radio">
+                        <input type="radio" name="topic1" value="4" ng-model="topic1"/>
+                        <div class="item-content">d，两列波的周期相等</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="item item-divider">2.得到的驻波方程可以表示为：</div>
+            <div class="item">
+                <div class="list img-topic-list">
+                    <label class="item item-radio">
+                        <input type="radio" name="topic2" ng-model="topic2" value="1"/>
+                        <div class="item-content">
+                            <img src="img/lab1/topic/1.jpg" />
+                        </div>
+                    </label>
+                    <label class="item item-radio">
+                        <input type="radio" name="topic2" ng-model="topic2" value="2"/>
+                        <div class="item-content">
+                            <img src="img/lab1/topic/2.jpg" />
+                        </div>
+                    </label>
+                    <label class="item item-radio">
+                        <input type="radio" name="topic2" ng-model="topic2" value="3"/>
+                        <div class="item-content">
+                            <img src="img/lab1/topic/3.jpg" />
+                        </div>
+                    </label>
+                    <label class="item item-radio">
+                        <input type="radio" name="topic2" ng-model="topic2" value="4"/>
+                        <div class="item-content">
+                            <img src="img/lab1/topic/4.jpg" />
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="item item-divider">3.该驻波相邻波腹和波腹之间的间隔是：</div>
+            <div class="item">
+                <div class="item">
+                    <input type="text" ng-model="topic3" placeholder="间隔"/>
+                </div>
+            </div>
+
+            <div class="item item-divider">4.该驻波从原点开始，沿x轴正方向的前两个波节坐标依次为：</div>
+            <div class="item">
+                <div class="item">
+                    <input type="text" placeholder="填入x1" ng-model="topic4_1"/>
+                </div>
+                <div class="item">
+                    <input type="text" placeholder="填入x2" ng-model="topic4_2"/>
+                </div>
+            </div>
+
+            <div class="item item-divider">5.两个点运动状态完全相同，且不为波节。则这两点之间的最短距离是:</div>
+            <div class="item">
+                <div class="item">
+                    <input type="text" ng-model="topic5" placeholder="距离"/>
+                </div>
+            </div>
+        </div>
+        <div class="padding row">
+            <div class="col">
+                <div on-tap="check_data()" class="button button-full button-calm">结果分析</div>
+            </div>
+            <div class="col">
+                <div on-tap="submit_data()" class="button button-full button-calm">上传结果</div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

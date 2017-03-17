@@ -1,0 +1,63 @@
+<ion-view class="lab1-page" cache-view="false">
+    <ion-nav-title>设定右行波</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <a href="#index" class="button button-icon ion-ios-home"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button on-tap="onBackBtn()" class="button button-icon ion-android-arrow-back"></button>
+    </ion-nav-buttons>
+    <ion-content class="params-select">
+        <div class="list card">
+            <div class="item">
+              <a href="#lab4_1">点击查看实验原理</a>
+            </div>
+            <div class="item item-divider">1.选择右行波方程</div>
+            <label class="item item-radio">
+                <input ng-model="yxb.fx"  type="radio" value="1" name="group">
+                <div class="item-content">
+                    方程一
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+            <label class="item item-radio">
+                <input ng-model="yxb.fx"  value="2" type="radio" name="group">
+                <div class="item-content">
+                    方程二
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+            <div ng-show="yxb.fx" class="item img-item">
+                <img ng-src="img/lab1/gs/youxingbo{{yxb.fx}}.png" />
+            </div>
+            <div class="item item-divider">2.选择参数</div>
+            <div class="item">
+                <div>&omega;<sub>1</sub>：</div>
+                <div button-radio data-aim="yxb" data-model="omega" class="button-bar omega-bar">
+                    <button class="button" data-value="5">5</button>
+                    <button class="button" data-value="10">10</button>
+                    <button class="button" data-value="15">15</button>
+                    <button class="button" data-value="20">20</button>
+                </div>
+            </div>
+            <div class="item">
+                <div>&lambda;<sub>1</sub>：</div>
+                <div button-radio data-aim="yxb" data-model="lambda" class="button-bar lambda-bar">
+                    <button class="button" data-value="2">2</button>
+                    <button class="button" data-value="4">4</button>
+                    <button class="button" data-value="8">8</button>
+                </div>
+            </div>
+            <div class="item">
+                <div>&phi;<sub>1</sub>：</div>
+                <div button-radio data-aim="yxb" data-model="phi" class="button-bar phi-bar">
+                    <button class="button" data-value="0">0</button>
+                    <button class="button" data-value="0.333">&pi;/3</button>
+                    <button class="button" data-value="0.5">&pi;/2</button>
+                </div>
+            </div>
+            <div class="item">
+                <a on-tap="onNextStep1()" class="button button-calm button-block">下一步</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

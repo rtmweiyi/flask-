@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{%block content%}
+<div class="wy-content">
+<h3>总共{{count}}条结果</h3>
+{%for title in content%}
+  <div class="link-tab">
+  <a href="/view/{{title[0]}}">
+  <h4>{{title[0]}}</h4>
+  <img src="{{title[1]}}" style="width:60px;">
+  </a>
+  <div><i>{{title[2]}}</i></div>
+  </div>
+{%endfor%}
+</div>
+<div class="wy_pager_group">
+    <ul class="pager">
+        {%if page.has_previous%}
+        <li class="previous"><a href="/search?keyword={{keyword}}&index={{page.page_index-1}}">&larr;</a></li>
+        {%else%}
+        <li class="previous disabled"><a href="#">&larr;</a></li>
+        {%endif%}
+        <li class=""><span>{{page.page_index}}</span></li>
+        {%if page.has_next%}
+        <li class="next"><a  href="/search?keyword={{keyword}}&index={{page.page_index+1}}">&rarr;</a></li>
+        {%else%}
+        <li class="next disabled"><a  href="#">&rarr;</a></li>
+        {%endif%}
+    </ul>
+</div>
+{%endblock%}

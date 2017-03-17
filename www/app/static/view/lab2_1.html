@@ -1,0 +1,58 @@
+<ion-view class="lab2_1-page" cache-view="false">
+    <ion-nav-title>李萨如</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <a href="#index" class="button button-icon ion-ios-home"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button on-tap="onBackBtn()" class="button button-icon ion-android-arrow-back"></button>
+    </ion-nav-buttons>
+    <ion-content class="params-select">
+        <div class="list card gs">
+            <div class="item">
+              <a ui-sref="lab4_2">点击查看实验原理</a>
+            </div>
+            <div class="item item-divider">1.李萨茹方程</div>
+
+            <div class="item img-item">
+                <img ng-src="img/lab2/1.jpg" />
+            </div>
+
+            <div class="item img-item">
+                <img ng-src="img/lab2/2.jpg" />
+            </div>
+
+            <div class="item item-divider">2.选择参数</div>
+            <div class="item">
+                <div>p</div>
+                <div button-radio data-aim="lsr" data-model="p" class="button-bar p-bar">
+                    <button class="button" data-value="1">1</button>
+                    <button class="button" data-value="2">2</button>
+                    <button class="button" data-value="3">3</button>
+                    <button class="button" data-value="4">4</button>
+                </div>
+            </div>
+            <div class="item">
+                <div>q</div>
+                <div button-radio data-aim="lsr" data-model="q" class="button-bar q-bar">
+                    <button class="button" data-value="1">1</button>
+                    <button class="button" data-value="2">2</button>
+                    <button class="button" data-value="3">3</button>
+                    <button class="button" data-value="4">4</button>
+                </div>
+            </div>
+            <div class="item">
+                <div>&omega;</div>
+                <div button-radio data-aim="lsr" data-model="omega" class="button-bar omega-bar">
+                    <button class="button" data-value="0">0</button>
+                    <button class="button" data-value="0.25">&pi;/4</button>
+                    <button class="button" data-value="0.5">&pi;/2</button>
+                    <button class="button" data-value="1">&pi;</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <a href="#lab2_2" class="button button-calm button-block">生成图像</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

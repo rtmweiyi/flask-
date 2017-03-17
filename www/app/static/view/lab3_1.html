@@ -1,0 +1,70 @@
+<ion-view class="lab3_1-page" cache-view="false">
+    <ion-nav-title>杨氏双缝</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <a href="#index" class="button button-icon ion-ios-home"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button on-tap="onBackBtn()" class="button button-icon ion-android-arrow-back"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="drag-drop-wrap">
+            <div class="padding">
+              <a ui-sref="lab4_3">点击查看实验原理</a>
+            </div>
+            <h1 class="padding">请将器材放到合适的位置,以完成实验</h1>
+            <ion-scroll class="scroll-box drag-box" zooming="false" direction="xy">
+                <div class="devices-box clearfix">
+                    <div class="wrap-box">
+                        <div class="device">
+                            <img data-aim="danfengban" src="img/lab3/danfengban.jpg" />
+                            <div class="name">单缝板</div>
+                        </div>
+                        <div class="device" >
+                            <img data-aim="shuangfengban" src="img/lab3/shuangfengban.jpg" />
+                          <div class="name">双缝板</div>
+                        </div>
+                        <br/>
+                        <div class="device">
+                            <img data-aim="guanchaping" src="img/lab3/guanchaping.jpg" />
+                            <div class="name">观察板</div>
+                        </div>
+                        <div class="device" >
+                            <img data-aim="dengpao" src="img/lab3/dengpao.jpg" />
+                            <div class="name">发光体</div>
+                        </div>
+                    </div>
+                </div>
+            </ion-scroll>
+            <ion-scroll class="scroll-box drop-box drop-box-shaing" zooming="false" direction="xy">
+                <div class="devices-box clearfix">
+                    <div class="wrap-box">
+                        <div class="device"></div>
+                        <div class="arrow">
+                            <div class="arrow-line"></div>
+                            <div class="arrow-right"></div>
+                        </div>
+
+                        <div class="device"></div>
+                        <div class="arrow">
+                            <div class="arrow-line"></div>
+                            <div class="arrow-right"></div>
+                        </div>
+
+                        <div class="device"></div>
+                        <div class="arrow">
+                            <div class="arrow-line"></div>
+                            <div class="arrow-right"></div>
+                        </div>
+
+                        <div class="device"></div>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+        <div class="row">
+            <div class="col">
+              <button on-tap="next()" class="button button-full button-calm">确认</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

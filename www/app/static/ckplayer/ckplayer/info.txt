@@ -1,0 +1,17 @@
+
+
+*** Frame 1 ***
+
+00000015: l
+0000001B: SETBACKGROUNDCOLOR
+00000020: astActivePopup
+000010FB: ugh space for _onexit/atexit table
+
+0000110F: 
+0000FA1F: SHOWFRAME
+
+*** Frame 2 ***
+
+0000FA21: END
+
+7 tags read

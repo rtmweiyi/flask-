@@ -1,0 +1,28 @@
+<ion-view class="lab1_3-page" cache-view="false">
+    <ion-nav-title>右、左行波图像</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <a href="#index" class="button button-icon ion-ios-home"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a href="#lab1_2" class="button button-icon ion-android-arrow-back"></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="card list">
+            <div class="item item-divider">1.右行波<a href="#lab1">修改参数</a></div>
+            <div class="item">
+                <ion-scroll  class="img-scroll" zooming="true" direction="xy">
+                    <div lab1-three-con data-type="yxb" data-width="500" data-height="200" class="three-content"></div>
+                </ion-scroll>
+            </div>
+        </div>
+        <div class="card list">
+            <div class="item item-divider">2.左行波<a href="#lab1_2">修改参数</a></div>
+            <div class="item">
+                <ion-scroll class="img-scroll" zooming="true" direction="xy">
+                    <div lab1-three-con data-type="zxb" data-width="500" data-height="200" class="three-content"></div>
+                </ion-scroll>
+            </div>
+        </div>
+        <div class="padding"><a href="#lab1_4" class="button button-calm button-full">生成驻波</a></div>
+    </ion-content>
+</ion-view>

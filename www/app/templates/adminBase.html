@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/static/css/base.css">
+  {%block head%}
+  {%endblock%}
+</head>
+<body>
+<div class="navgation">
+  	<div class="wy-wrap">
+  	<div class="wy-top-nav">
+  	<ul class="wy-top-nav-ul">
+  		<li class="wy-top-nav-li"><a class="wy-top-nav-link" href="/admin">管理</a></li>
+  		<li class="wy-top-nav-li"><a class="wy-top-nav-link" href="/logout">注销</a></li>
+  	</ul>
+  	</div>
+  	</div>
+</div>
+  {%block content%}
+  {%endblock%}
+  <div style="position:relative;height:100px;clear:both;">
+  </div>
+  <div class="footer">
+  	<div class="zg-wrap content">
+  	    <span><a href="/adminLogin">管理入口</a></span>
+  		<span>test</span>
+  	</div>
+  </div>
+</body>
+</html>

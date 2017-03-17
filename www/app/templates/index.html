@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{%block content%}
+<div class="wy-content">
+{%for title in news%}
+  <div class="box">
+  <div class="box_img">
+  <a href="/view/{{title[0]}}">
+  <h4>{{title[0]}}</h4>
+  <img src="{{title[1]}}" style="width:150px;height:auto;">
+  </a>
+  </div>
+  </div>
+{%endfor%}
+</div>
+<div class="wy_pager_group">
+    <ul class="pager">
+        {%if page.has_previous%}
+        <li class="previous"><a href="/{{page.page_index-1}}">&larr;</a></li>
+        {%else%}
+        <li class="previous disabled"><a href="#">&larr;</a></li>
+        {%endif%}
+        <li class=""><span>{{page.page_index}}</span></li>
+        {%if page.has_next%}
+        <li class="next"><a  href="/{{page.page_index+1}}">&rarr;</a></li>
+        {%else%}
+        <li class="next disabled"><a  href="#">&rarr;</a></li>
+        {%endif%}
+    </ul>
+</div>
+{%endblock%}

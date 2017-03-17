@@ -1,0 +1,26 @@
+{% extends "adminBase.html" %}
+{%block content%}
+
+<div>
+    <span>视频地址</span><i>用|分割</i><br>
+    <input type="text" id="address">
+    <button class="btn" onclick="up_address()"><span>提交</span></button>
+</div>
+<div>
+    <span>视频id</span>
+    <div id="video_id"></div>
+</div>
+<script>
+    function up_address() {
+        var fd = new FormData();
+        var address = document.getElementById('address').value;
+        var ajax = new XMLHttpRequest();
+        fd.append('address',address);
+        ajax.open('post','/add_address',true);
+        ajax.onload = function(){
+        document.getElementById("video_id").innerHTML=ajax.responseText;
+        }
+        ajax.send(fd);
+    }
+</script>
+{%endblock%}

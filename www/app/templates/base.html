@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+  {%block head%}
+  {%endblock%}
+	<link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+<div class="navgation">
+  	<div class="wy-wrap">
+  	<div class="wy-top-nav">
+  	<ul class="wy-top-nav-ul">
+  		<li class="wy-top-nav-li"><a class="wy-top-nav-link" href="/">首页</a></li>
+  		<li class="wy-top-nav-li"><a class="wy-top-nav-link" href="/comic">动漫</a></li>
+  		<li class="wy-top-nav-li"><a class="wy-top-nav-link" href="/private">个人中心</a></li>
+  	</ul>
+  	</div>
+  	<div class="wy-top-nav-gr">
+  	  <a href="/login"><button class="wy-top-nav-button">登录</button></a>
+  	  <a href="/register"><button class="wy-top-nav-button">注册</button></a>
+    </div>
+    <div style="position:relative;">
+    <div class="search">
+      <form action="/search" id="searchform">
+        <input class="search-keyword" type="text" name="keyword">
+        <button type="submit" class=" glyphicon glyphicon-search search-submit"></button>
+      </form>
+    </div>
+    </div>
+  	</div>
+</div>
+  {%block content%}
+  {%endblock%}
+  <div style="position:relative;height:100px;clear:both;">
+  </div>
+  <div class="footer">
+  	<div class="zg-wrap content">
+  	    <span><a href="/adminLogin">管理入口</a></span>
+  		<span>@leimulamu</span>
+  	</div>
+  </div>
+</body>
+</html>

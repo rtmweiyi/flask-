@@ -1,0 +1,121 @@
+{% extends "adminBase.html" %}
+{%block content%}
+<br>
+<h3>选择需要上传的视频</h3>
+<input type="file" id="videofile" multiple><br>
+<button class="btn" onclick="uploadFile()"><span class="glyphicon glyphicon-cloud-upload">上传</span></button>
+<div>
+	<span>上传进度</span>
+	<div class="progress progress-striped">
+		<div class="progress-bar progress-bar-info" id="progressNumber"></div>
+	</div>
+</div>
+<div>
+<div id="vid"></div>
+<button id="copybtn" onclick="copyId()" class="btn" disabled="disabled"><span class="glyphicon glyphicon-floppy-disk">复制</span></button>
+<span id="info"></span>
+</div>
+<script>
+	function uploadFile(){
+		var fd = new FormData();
+		var files = document.getElementById('videofile').files;
+		for(i=0;i<files.length;i++){
+			fd.append('file'+i,document.getElementById('videofile').files[i]);
+		}
+		var xhr = new XMLHttpRequest();
+		xhr.upload.addEventListener("progress",uploadProgress,false);
+		xhr.addEventListener('load',uploadComplete,false);
+		xhr.addEventListener('error',uploadFailed,false);
+		xhr.open("POST","/uploadvideo");
+		xhr.send(fd);
+	}
+	function uploadProgress(evt){
+		if(evt.lengthComputable){
+			var percentComplete = Math.round(evt.loaded*100/evt.total);
+			document.getElementById("progressNumber").style.width = percentComplete.toString() + '%';
+		}
+		else{
+			document.getElementById("progressNumber").innerHTML = "无法估计";
+		}
+	}
+	function uploadComplete(evt){
+		document.getElementById("vid").innerText=evt.target.responseText;
+		document.getElementById("copybtn").disabled=false;
+	}
+	function uploadFailed(evt){
+		alert("上传失败!");
+	}
+	function copyId(){
+		var vid = document.getElementById("vid").innerText;
+		CopyToClipboard(vid);
+	}
+	function CopyToClipboard (a) {
+            var textToClipboard = a;
+            
+            var success = true;
+            if (window.clipboardData) { // Internet Explorer
+                window.clipboardData.setData ("Text", textToClipboard);
+            }
+            else {
+                    // create a temporary element for the execCommand method
+                var forExecElement = CreateElementForExecCommand (textToClipboard);
+
+                        /* Select the contents of the element 
+                            (the execCommand for 'copy' method works on the selection) */
+                SelectContent (forExecElement);
+
+                var supported = true;
+
+                    // UniversalXPConnect privilege is required for clipboard access in Firefox
+                try {
+                    if (window.netscape && netscape.security) {
+                        netscape.security.PrivilegeManager.enablePrivilege ("UniversalXPConnect");
+                    }
+
+                        // Copy the selected content to the clipboard
+                        // Works in Firefox and in Safari before version 5
+                    success = document.execCommand ("copy", false, null);
+                }
+                catch (e) {
+                    success = false;
+                }
+                
+                    // remove the temporary element
+                document.body.removeChild (forExecElement);
+            }
+
+            if (success) {
+                document.getElementById('info').innerText="复制成功!";
+            }
+            else {
+                document.getElementById('info').innerText="你的浏览器不支持，请手动复制!";
+            }
+        }
+
+        function CreateElementForExecCommand (textToClipboard) {
+            var forExecElement = document.createElement ("div");
+                // place outside the visible area
+            forExecElement.style.position = "absolute";
+            forExecElement.style.left = "-10000px";
+            forExecElement.style.top = "-10000px";
+                // write the necessary text into the element and append to the document
+            forExecElement.textContent = textToClipboard;
+            document.body.appendChild (forExecElement);
+                // the contentEditable mode is necessary for the  execCommand method in Firefox
+            forExecElement.contentEditable = true;
+
+            return forExecElement;
+        }
+
+        function SelectContent (element) {
+                // first create a range
+            var rangeToSelect = document.createRange ();
+            rangeToSelect.selectNodeContents (element);
+
+                // select the contents
+            var selection = window.getSelection ();
+            selection.removeAllRanges ();
+            selection.addRange (rangeToSelect);
+        }
+</script>
+{%endblock%}
